@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import './App.css';
 import TodoInput from "./components/TodoInput/TodoInput";
 import TodoList from "./components/TodoList/TodoList";
-import LoginComponent from "./components/LoginComponent/LoginComponent"
-
+import LoginComponent from "./components/LoginComponent/LoginComponent";
+import Fab from '@material-ui/core/Fab';
 
 class App extends Component {
   state = {
@@ -37,20 +37,28 @@ class App extends Component {
     this.setState({ Todos: newState });
   }
   Login = () => {
-    this.setState({isLoggedIn: true});
-  } 
+    this.setState({ isLoggedIn: true });
+  }
   LoginOrNot = () => {
     if (this.state.isLoggedIn === true) {
       return (
         <div className="App" >
-          <TodoInput TodoChange={(todo, description) => this.todoChangeHandeler(todo, description)} />
-          <TodoList markDone={(id) => this.markDone(id)} deleteTodo={(Todo_id) => this.DeleteTodo(Todo_id)} todos={this.state.Todos} />
+          <div style={{ display: "flex", justifyContent: "left", marginTop: "20px", marginLeft: "20px" }}>
+            <Fab onClick={() => { this.setState({ isLoggedIn: false }) }} variant="extended" aria-label="like">
+
+              Logout
+            </Fab>
+          </div>
+          <div style={{marginTop: "20vh"}}>
+            <TodoInput TodoChange={(todo, description) => this.todoChangeHandeler(todo, description)} />
+            <TodoList markDone={(id) => this.markDone(id)} deleteTodo={(Todo_id) => this.DeleteTodo(Todo_id)} todos={this.state.Todos} />
+          </div>
         </div>
       );
     } else {
       return (
-        <LoginComponent login = {this.Login}/>
-      ); 
+        <LoginComponent login={this.Login} />
+      );
     }
   }
   render() {
