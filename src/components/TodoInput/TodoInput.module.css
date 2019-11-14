@@ -1,0 +1,20 @@
+.textField{
+    width: 50vw;
+}
+@media(max-width: 600px){
+    .textField{
+        width: 100vw;
+    }
+}
+
+#button{
+    background-color: blueviolet;
+    color: white;
+    transition: 0.25s ease;
+}
+#button:hover{
+    transform: scale(1.07);
+    background-color: white;
+    color: blueviolet;
+    font-weight: 900;
+}

@@ -1,0 +1,48 @@
+.todoContainer{
+    width: 60vw;
+    background-color: rgb(245, 122, 122);
+    border: 1px solid black;
+    padding: 10px 0px;
+    border-radius: 25px;
+}
+.todoContainerComp{
+    width: 60vw;
+    background-color: rgb(142, 241, 112);
+    border: 1px solid black;
+    padding: 10px 0px;
+    border-radius: 25px;
+}
+@media(max-width: 600px){
+    .rodoContainerComp{
+        width: 100vw;
+    }
+    .todoContainer{
+        width: 100vw;
+    }
+}
+.heading{
+    transition: 0.25s ease;
+}
+.heading:hover{
+    cursor: pointer !important;
+    font-size: 18px !important;
+}
+#todo{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.btn{
+    background-color: aliceblue;
+
+}
+.btn:hover{
+    cursor: pointer !important;
+}
+
+.description{
+    border: 1px solid black;
+    width: 70vw;
+    margin: 0 auto;
+}
